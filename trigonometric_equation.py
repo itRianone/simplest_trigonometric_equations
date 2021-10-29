@@ -36,11 +36,14 @@ def solve_this(equation: str):
 
   if '√' in equation:
     equation = equation.replace('√', 'square_of') 
-    
+
   arca = get_arca(equation=equation)
   #print(arca)
   return formulas_(*arca)
   
 
-#TODO: MAKE NORMAL TO GET SQUARE SIGN AND π
-print(solve_this('sinx=-(√3/2)'))
+#√
+try:
+  print(solve_this('cosx=-(1/2)'))
+except KeyError as e:
+  print(e, '\nInvalid value, pls check validity of equation')
